@@ -1,7 +1,10 @@
 class UsersController < ApplicationController
   def show
-    @user =
+    @user =User.find()
     @post_images = @user.post_images
+  end
+
+  def index
   end
 
   def edit
