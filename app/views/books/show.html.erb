@@ -5,11 +5,10 @@
 
       <table class="table">
         <tbody>
-          <%= form_with model: @user do |f| %>
           <tr>
             <th>name</th>
             <th>
-              <%= f.text_field :name, autofocus: true, id:"inputName", placeholder:"名前"%>
+              <%= @user.user.name %>
             </th>
           </tr>
           <% end %>

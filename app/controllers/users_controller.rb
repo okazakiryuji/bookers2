@@ -1,11 +1,12 @@
 class UsersController < ApplicationController
   def show
-    @user =User.find()
-    @post_images = @user.post_images
+    @user =User.find(params[:id])
+    @books = @user.books
   end
 
   def index
     @User = User.new
+    @users = User.all
   end
 
   def create
@@ -15,5 +16,6 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @user = User.find(params[:id])
   end
 end
