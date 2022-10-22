@@ -3,6 +3,7 @@
     <div class="col-md-3">
       <h2>User info</h2>
 
+
       <table class="table">
         <tbody>
           <%= form_with model: @user do |f| %>
@@ -56,8 +57,14 @@
         <tbody>
           <% @books.each do |book| %>
           <tr>
-            <tb></tb>
-            <td><%= book.title %></td>
+            <td>
+              <% if book.image.attached? %>
+                <%= image_tag book.image, size: "80x80" %>
+              <% else %>
+                <%= image_tag 'no_image', size: "80x80" %>
+              <% end %>
+            </td>
+            <td><%=link_to  book.title, book_path(book.id)%></td>
             <td><%= book.body %></td>
           </tr>
           <% end %>
