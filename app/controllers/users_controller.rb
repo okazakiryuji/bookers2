@@ -31,9 +31,11 @@ class UsersController < ApplicationController
     redirect_to '/users'
   end
 
-
+  def _user
+    @Book = Book.new
+  end
 
   def user_params
-    params.require(:user).permit(:title, :body,:image)
+    params.require(:user).permit(:name, :introduction,:image)
   end
 end

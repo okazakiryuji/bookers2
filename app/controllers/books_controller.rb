@@ -10,7 +10,7 @@ class BooksController < ApplicationController
 
   def index
     @Book = Book.new
-    @books = Book.all
+    @Books = Book.all
 
   end
 
@@ -25,12 +25,13 @@ class BooksController < ApplicationController
   end
 
   def create
-    book = Book.new(book_params)
-    book.user_id = current_user.id
-    if book.save
+    @Book = Book.new(book_params)
+    @Book.user_id = current_user.id
+    if @Book.save
       flash[:notice] = "You have created book successfully."
-      redirect_to book_path(book.id)
+      redirect_to book_path(@Book.id)
     else
+      @Books = Book.all
       render :index
     end
   end
