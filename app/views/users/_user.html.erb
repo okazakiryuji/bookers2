@@ -4,7 +4,7 @@
       <table class="table">
         <% users.each do |user| %>
         <tbody>
-          <%= image_tag user.get_profile_image(100,100) %>
+          <%= image_tag user.get_profile_image %>
           <tr>
             <th>name</th>
             <th><%= user.name %></th>

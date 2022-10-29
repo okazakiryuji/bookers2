@@ -1,3 +1,4 @@
+
 <div class="container">
   <% if @Book.errors.any? %>
   <h2><%= @Book.errors.count %> errors prohibited this obj from being saved</h2>
@@ -15,11 +16,7 @@
 
       <table class="table">
         <tbody>
-          <% if current_user.profile_image.attached? %>
-           <%= image_tag current_user.profile_image, size: "100x100" %>
-          <% else %>
-           <%= image_tag 'no_image', size: "100x100" %>
-          <% end %>
+          <%= image_tag current_user.get_profile_image %>
           <tr>
             <th>name</th>
             <th>
