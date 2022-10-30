@@ -2,7 +2,6 @@
       <h2>User info</h2>
 
       <table class="table">
-        <% users.each do |user| %>
         <tbody>
           <%= image_tag user.get_profile_image %>
           <tr>
@@ -14,7 +13,6 @@
             <th><%= user.introduction %></th>
           </tr>
         </tbody>
-        <% end %>
       </table>
 
       <div class="row">

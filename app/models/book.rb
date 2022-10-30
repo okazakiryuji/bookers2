@@ -2,8 +2,11 @@ class Book < ApplicationRecord
   has_one_attached :image
   belongs_to :user
 
+  before_action :correct_user, only: [:edit]
+
   validates :title, presence: true
   validates :body, presence: true
+  validates :body, length: { maximum: 200 }
 
   def get_profile_image
     unless profile_image.attached?
