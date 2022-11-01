@@ -4,7 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-　before_action :correct_user, only: [:edit]
   has_many :books, dependent: :destroy
 
   validates :name, uniqueness: true
